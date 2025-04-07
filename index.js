@@ -42,10 +42,10 @@ app.get("/api/:date", function (req, res) {
         }
         } 
       else{
-        d = new Date(date *1000)
+        d = new Date(parseInt(date))
         utc =d.toUTCString()
-        unix = d.valueOf()
-        res.json({"unix":unix,"utc":utc})
+
+        res.json({"unix":d,"utc":utc})
       }   
     }
  
